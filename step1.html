@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+
+    <title></title>
+  </head>
+  <body>
+    <div id="root">
+      <input type="text" id="input" v-model="message">
+      <p>The value of the input is: {{ message }}</p>
+    </div>
+
+    <script>
+
+      // document.querySelector('#input').value = data.message;
+
+      new Vue({
+        el: '#root',
+        data: {
+          message: 'hello world'
+        }
+      })
+
+    </script>
+  </body>
+</html>
