@@ -1,0 +1,49 @@
+<!-- events -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <style media="screen">
+      .color-red { color: red; }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li v-for="name in names" v-text="name" v-bind:class='className'></li>
+      </ul>
+      <input type="text" id="input" v-model="newName">
+      <button v-on:click="addName">Add Name</button>
+    </div>
+
+
+    <script>
+
+      let app = new Vue({
+        el: '#root',
+        data: {
+          newName: '',
+          names: ['Joe', 'Mary', 'Jane', 'Jack'],
+          className: 'color-red',
+        },
+        methods: {
+          addName() {
+            this.names.push(this.newName);
+            this.newName = '';
+          },
+        },
+        // mounted() {
+        //   document.querySelector("#button").addEventListener('click', () => {
+        //     let name = document.querySelector("input");
+        //     app.names.push(name.value);
+        //     name.value = '';
+        //   });
+        // }
+      });
+
+
+    </script>
+  </body>
+</html>
